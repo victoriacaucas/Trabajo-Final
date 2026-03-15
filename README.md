@@ -107,24 +107,23 @@ Este script genera un gráfico comparativo entre los distintos espectros experim
 Un flujo de trabajo común para el análisis de los datos es el siguiente:
 
 1. **suma.py**  
-   Combinar los archivos experimentales individuales en un único espectro por muestra.
+   Combinar los archivos experimentales individuales en un único espectro por muestra (combinar los archivos cianuro_x.dat para obtener cianuro_suma.dat).
 
 2. **ajustefinal.py**  
-   Calibrar el espectro experimental y generar el archivo `*_calib.dat`.
+   Calibrar el espectro experimental y generar el archivo `*_calib.dat` (calibrar el archivo cianuro_suma.dat y comparar con el espectro generado a partir del archivo A2.txt).
 
 3. **barras.py**  
-   Generar el espectro teórico a partir de las transiciones obtenidas con CTM4XAS.
+   Generar el espectro teórico a partir de las transiciones obtenidas con CTM4XAS (visualizar con el archivo A2.dat).
 
 4. **comparar.py**  
-   Comparar el espectro teórico con el experimental calibrado.
+   Comparar el espectro teórico con el experimental calibrado (A2.txt y cianuro_suma_calib.dat).
 
 5. **valores.py**  
-   Calcular magnitudes espectroscópicas como el IAD y el primer momento energético.
+   Calcular magnitudes espectroscópicas como el IAD y el primer momento energético de los archivos experimentales calibrados (cianuro_suma_calib.dat, por ejemplo).
 
 6. **hs.py**  
-   Obtener el espectro de alto espín y calcular las poblaciones de espín.
+   Obtener el espectro de alto espín y calcular las poblaciones de espín (utilizando los archivos cianuro_suma_calib.dat, LaCoO3_suma_calib.dat, TmCoO3_suma_calib.dat, LaFe04_suma_calib.dat, LaFe06_suma_calib.dat).
 
 7. **graficar_hs.py**  
-   Visualizar y comparar los espectros experimentales junto con el espectro HS calculado.
-Esto permite visualizar directamente las diferencias entre las muestras y la contribución del estado de alto espín.
+   Visualizar y comparar los espectros experimentales junto con el espectro HS calculado. Esto permite visualizar directamente las diferencias entre las muestras y la contribución del estado de alto espín.
 
